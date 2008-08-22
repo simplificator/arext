@@ -1,0 +1,23 @@
+Arext
+=====
+
+Active Record Extensions.
+
+== Validations (validates_constraints() )
+This uses the information one can extract from ActiveRecord::ConnectionAdapter::Column 
+to add default validations. The text?, limit and type methods are used to guess what validations are to be added
+
+ * Adds validates_presence_of for columns with not null constraints unless type is :boolean)
+ * Adds validates_inclusion_of(:in => [true, false]) for columns with not null constraints and :boolean type
+ * Adds validates_length_of for text columns with not null limit
+
+Example
+=======
+
+in your ActiveRecord class:
+ validate_constraints(:attribute_name, :other_attribute_name)
+or
+ validates_constraints() for all attributes
+
+
+Copyright (c) 2008 [name of plugin creator], released under the MIT license
