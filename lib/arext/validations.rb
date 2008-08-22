@@ -11,8 +11,7 @@ module Arext
           if (col.name != primary_key) # don't touch id
             # length checks
             if col.text? && (not col.limit.blank?)
-              length_options = {:maximum => col.limit}.merge(:allow_nil => true, :allow_blank => true)
-              validates_length_of(attribute_name, length_options)
+              validates_length_of(attribute_name, :maximum => col.limit, :allow_nil => true, :allow_blank => true)
               logger.debug("Added Validation for '#{attribute_name}' length to be maximum of #{col.limit}")
             elsif col.text?
               logger.debug("Did not find a limit for '#{attribute_name}' even though it's text")
@@ -26,7 +25,7 @@ module Arext
                 validates_inclusion_of(attribute_name, :in => [true, false])
                 logger.debug("Added Validation for inclusion of #{attribute_name} in [true, false] since null is not allowed")
               else
-                validates_presence_of(attribute_name)
+                validates_presence_of(attribute_name, :if => lambda {|item| item.send(col.name) != ''})
                 logger.debug("Added Validation for presence of #{attribute_name} since null is not allowed")
               end
               

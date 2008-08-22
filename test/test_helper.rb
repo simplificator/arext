@@ -32,4 +32,4 @@ end
 ActiveRecord::Base.logger = Logger.new(STDOUT)
 ActiveRecord::Base.logger.level = Logger::DEBUG # change to DEBUG if you want to see something :-)
 
-require 'foo'
+require File.join(File.dirname(__FILE__), 'foo')

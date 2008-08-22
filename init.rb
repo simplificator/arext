@@ -1,1 +1,4 @@
-require 'lib/arext'
+require File.join(File.dirname(__FILE__), 'lib', 'arext')
+ 
+
+
