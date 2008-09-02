@@ -27,6 +27,8 @@ ActiveRecord::Base.connection.create_table(:foos) do |table|
   table.integer(:not_null_integer, :null => false)
   table.float(:null_float, :null => true)
   table.float(:not_null_float, :null => false)
+  
+  table.string(:url)
 end
 
 ActiveRecord::Base.logger = Logger.new(STDOUT)

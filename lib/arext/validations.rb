@@ -1,6 +1,16 @@
 module Arext
   module Validations
     module ClassMethods
+      VALID_PROTOCOLS = "(http|https):\/\/"
+      VALID_HOST = "[a-z0-9]+([\-\.]{1}[a-z0-9]+)*"
+      VALID_IP = "[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}"
+      VALID_TLD = "[a-z]{2,5}"
+      VALID_PORT = "(:[0-9]{1,5})?"
+      def validates_url(attribute)
+        validates_format_of(attribute, :with => /^#{VALID_PROTOCOLS}(#{VALID_HOST}\.#{VALID_TLD}|#{VALID_IP})#{VALID_PORT}(\/.*)?$/ix)
+      end
+      
+      
       def validates_constraints(*attrs)
         attrs = column_names if attrs.blank?
         attrs.each do |attr|

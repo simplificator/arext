@@ -3,7 +3,8 @@ Arext
 
 Active Record Extensions.
 
-== Validations (validates_constraints() )
+=== Validations 
+== validates_constraints
 This uses the information one can extract from ActiveRecord::ConnectionAdapter::Column 
 to add default validations. The text?, limit and type methods are used to guess what validations are to be added
 validates_constraints make some assumptions (see below) and none of its behaviour is configurable.
@@ -14,6 +15,10 @@ validates_constraints make some assumptions (see below) and none of its behaviou
      If you want to have different behaviour then just add a validation yourself
  * Adds validates_inclusion_of(:in => [true, false]) for columns with not null constraints and :boolean type
  * Adds validates_length_of for text columns with not null limit
+
+== validates_url
+
+== validates_host
 
 Example
 =======
