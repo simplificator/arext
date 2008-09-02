@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = %q{arext}
-  s.version = "0.2.6"
+  s.version = "0.2.7"
   s.date = %q{2008-09-02}
   s.authors = ["Simplificator GmbH"]
   s.email = %q{info@simplificator.com}

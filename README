@@ -17,16 +17,30 @@ validates_constraints make some assumptions (see below) and none of its behaviou
  * Adds validates_length_of for text columns with not null limit
 
 == validates_url
+This validator adds the feature to validate urls with http and https protocols. It also include 
+portnumbers and any subdomains. Instead of a domain name, you can use ip address too (version 4).
 
 == validates_host
+This validator adds the feature to validate a hostname. Instead of a hostname, you can 
+use ip address too (version 4).
+
 
 Example
 =======
-
+== validates_constraints
 in your ActiveRecord class:
  validate_constraints(:attribute_name, :other_attribute_name)
 or
  validates_constraints() for all attributes
 
+== validates_url
+in your ActiveRecord class:
+  validates_url(:attribute)
 
-Copyright (c) 2008 [name of plugin creator], released under the MIT license
+== validates_host
+in your ActiveRecord class:
+  validates_host(:attribute)
+
+
+
+Copyright (c) 2008 [simplificator gmbh], released under the MIT license

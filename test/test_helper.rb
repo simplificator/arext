@@ -29,6 +29,7 @@ ActiveRecord::Base.connection.create_table(:foos) do |table|
   table.float(:not_null_float, :null => false)
   
   table.string(:url)
+  table.string(:host)
 end
 
 ActiveRecord::Base.logger = Logger.new(STDOUT)
