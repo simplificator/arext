@@ -1,10 +1,7 @@
 require File.join(File.dirname(__FILE__), '..', 'test_helper')
 
 class ValidatesConstraintsTest < Test::Unit::TestCase
-  def setup()
-    #Foo.new
-  end
-  
+ 
   def test_not_null_string_with_limit
     Foo.send(:validates_constraints, :not_null_string_with_limit)
     assert(valid_foo())

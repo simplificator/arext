@@ -12,14 +12,16 @@ class ValidatesHostTest < Test::Unit::TestCase
     
     VALID_HOSTS.each do |host|
       foo = Foo.new(:host => host)
-      assert(foo.valid?, "Host #{host} is supposed to be valid")
+      foo.valid?
+      assert(foo.errors[:host].blank?, "Host '#{host}' is supposed to be valid")
     end
   end
   
   def test_invalid_host_formats
     INVALID_HOSTS.each do |host|
       foo = Foo.new(:host => host)
-      assert(!foo.valid?, "Host #{host} is supposed to be invalid")
+      foo.valid?
+      assert(foo.errors[:host], "Host '#{host}' is supposed to be invalid")
     end
   end
 end

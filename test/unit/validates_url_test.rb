@@ -10,18 +10,25 @@ class ValidatesUrlTest < Test::Unit::TestCase
   def setup()
     Foo.send(:validates_url, :url)
   end
+  
+  def test_setup()
+    assert Foo.columns_hash['url'], "ActiveRecord should provide an url accessor"
+  end
+  
   def test_valid_url_formats
     
     VALID_URLS.each do |url|
       foo = Foo.new(:url => url)
-      assert(foo.valid?, "URL #{url} is supposed to be valid")
+      foo.valid?
+      assert(foo.errors[:url].blank?, "URL '#{url}' is supposed to be valid: #{foo.errors[:url]}")
     end
   end
   
   def test_invalid_url_formats
     INVALID_URLS.each do |url|
       foo = Foo.new(:url => url)
-      assert(!foo.valid?, "URL #{url} is supposed to be invalid")
+      foo.valid?
+      assert(foo.errors[:url], "URL '#{url}' is supposed to be invalid")
     end
   end
 end
