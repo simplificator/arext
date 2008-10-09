@@ -24,6 +24,9 @@ portnumbers and any subdomains. Instead of a domain name, you can use ip address
 This validator adds the feature to validate a hostname. Instead of a hostname, you can 
 use ip address too (version 4).
 
+== validates_email
+This validator adds the feature to validate a email address.
+
 
 Example
 =======
@@ -40,6 +43,10 @@ in your ActiveRecord class:
 == validates_host
 in your ActiveRecord class:
   validates_host(:attribute)
+
+== validates_email
+in your ActiveRecord class:
+  validates_email(:attribute)
 
 
 

@@ -15,6 +15,10 @@ module Arext
         validates_format_of(attribute, :with => /^(#{VALID_HOST}\.#{VALID_TLD}|#{VALID_IP})$/)
       end
       
+      def validates_email(attribute)
+        validates_format_of(attribute, :with => /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,5})+$/)
+      end
+      
       
       def validates_constraints(*attrs)
         attrs = column_names if attrs.blank?

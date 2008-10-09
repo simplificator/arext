@@ -30,6 +30,7 @@ ActiveRecord::Base.connection.create_table(:foos) do |table|
   
   table.string(:url)
   table.string(:host)
+  table.string(:email)
 end
 
 ActiveRecord::Base.logger = Logger.new(STDOUT)
