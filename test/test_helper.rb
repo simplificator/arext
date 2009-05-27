@@ -2,7 +2,7 @@ require 'rubygems'
 require 'active_record'
 require 'test/unit'
 
-require File.join(File.dirname(__FILE__), '..', 'init')
+require File.join(File.dirname(__FILE__), '..', 'lib', 'arext')
 
 
 ActiveRecord::Base.establish_connection(  
