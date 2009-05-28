@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["simplificator"]
-  s.date = %q{2009-05-27}
+  s.date = %q{2009-05-28}
   s.email = %q{info@simplificator.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -21,7 +21,6 @@ Gem::Specification.new do |s|
     "lib/arext/validations.rb",
     "test/foo.rb",
     "test/test_helper.rb",
-    "test/unit/test.sqlite3",
     "test/unit/validates_constraints_test.rb",
     "test/unit/validates_email_test.rb",
     "test/unit/validates_host_test.rb",
